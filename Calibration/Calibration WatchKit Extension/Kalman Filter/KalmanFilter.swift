@@ -8,9 +8,7 @@
 
 import Foundation
 
-/**
-    Referred from https://en.wikipedia.org/wiki/Kalman_filter#Details
-*/
+// Referred from https://en.wikipedia.org/wiki/Kalman_filter#Details
 public struct KalmanFilter<Type: KalmanInput>: KalmanFilterType {
     
     // x̂_k|k-1

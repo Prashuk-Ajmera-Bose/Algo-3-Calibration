@@ -11,40 +11,47 @@ import simd
 
 class Matrix {
     
-    public let roll: Double
-    public let pitch: Double
-    public let yaw: Double
-    
-    public init(roll: Double, pitch: Double, yaw: Double) {
-        self.roll = roll
-        self.pitch = pitch
-        self.yaw = yaw
+    public let x: Double
+    public let y: Double
+    public let z: Double
+    public let matForm: [simd_double3]
+
+    public init(x: Double, y: Double, z: Double) {
+        self.x = x
+        self.y = y
+        self.z = z
+        
+        matForm = [
+            simd_double3( x ),
+            simd_double3( y ),
+            simd_double3( z )
+        ]
     }
     
-    private func makeRotationMatrixRoll(roll: Double) -> simd_double3x3 {
+    public func makeRotationMatrixPitch(pitch: Double) -> simd_double3x3 {
         let rows = [
-            simd_double3(   1,            0,           0 ),
-            simd_double3(   0,    cos(roll),   sin(roll) ),
-            simd_double3(   0,   -sin(roll),   cos(roll) )
+            simd_double3(   1,             0,             0 ),
+            simd_double3(   0,    cos(pitch),   -sin(pitch) ),
+            simd_double3(   0,    sin(pitch),    cos(pitch) )
         ]
         
         return double3x3(rows: rows)
     }
     
-    private func makeRotationMatrixPitch(pitch: Double) -> simd_double3x3 {
+    public func makeRotationMatrixRoll(roll: Double) -> simd_double3x3 {
         let rows = [
-            simd_double3(   cos(pitch),   0,   -sin(pitch) ),
-            simd_double3(            0,   1,             0 ),
-            simd_double3(   sin(pitch),   0,    cos(pitch) )
+            simd_double3(    cos(roll),   0,    sin(roll) ),
+            simd_double3(            0,   1,            0 ),
+            simd_double3(   -sin(roll),   0,    cos(roll) )
         ]
         
         return double3x3(rows: rows)
     }
     
-    private func makeRotationMatrixYaw(yaw: Double) -> simd_double3x3 {
+    public func makeRotationMatrixYaw(yaw: Double) -> simd_double3x3 {
         let rows = [
-            simd_double3(    cos(yaw),   sin(yaw),   0 ),
-            simd_double3(   -sin(yaw),   cos(yaw),   0 ),
+            simd_double3(   cos(yaw),   -sin(yaw),   0 ),
+            simd_double3(   sin(yaw),    cos(yaw),   0 ),
             simd_double3(           0,          0,   1 )
         ]
         
@@ -52,7 +59,8 @@ class Matrix {
     }
     
     
-    public func rotation(roll: Double, pitch: Double, yaw: Double) {
-        
+    public func rotation(pitch: Double, roll: Double, yaw: Double) -> simd_double3x3 {
+        return makeRotationMatrixPitch(pitch: pitch) * makeRotationMatrixRoll(roll: roll) * makeRotationMatrixYaw(yaw: yaw) * double3x3(rows: matForm)
     }
 }
+
