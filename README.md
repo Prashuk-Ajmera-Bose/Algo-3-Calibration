@@ -1,1 +1,3 @@
-# Algo-3-Calibration
+# Algo 3
+
+Explores IMU data in different frames
