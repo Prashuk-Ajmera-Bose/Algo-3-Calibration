@@ -19,6 +19,7 @@
 		3658F4862333C5C100FD61BA /* KalmanFilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3658F4842333C5C100FD61BA /* KalmanFilterType.swift */; };
 		3658F4882333C5D100FD61BA /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3658F4872333C5D100FD61BA /* Extension.swift */; };
 		3658F48A23350DBA00FD61BA /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3658F48923350DBA00FD61BA /* Matrix.swift */; };
+		367A1C302358AD720050FAF8 /* CodeCleanup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367A1C2F2358AD720050FAF8 /* CodeCleanup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		3658F4842333C5C100FD61BA /* KalmanFilterType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KalmanFilterType.swift; sourceTree = "<group>"; };
 		3658F4872333C5D100FD61BA /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		3658F48923350DBA00FD61BA /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		367A1C2F2358AD720050FAF8 /* CodeCleanup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCleanup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				3658F4742333C56800FD61BA /* Info.plist */,
 				3658F4872333C5D100FD61BA /* Extension.swift */,
 				3658F48923350DBA00FD61BA /* Matrix.swift */,
+				367A1C2F2358AD720050FAF8 /* CodeCleanup.swift */,
 			);
 			path = "Calibration WatchKit Extension";
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				3658F4882333C5D100FD61BA /* Extension.swift in Sources */,
 				3658F4862333C5C100FD61BA /* KalmanFilterType.swift in Sources */,
 				3658F4852333C5C100FD61BA /* KalmanFilter.swift in Sources */,
+				367A1C302358AD720050FAF8 /* CodeCleanup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
