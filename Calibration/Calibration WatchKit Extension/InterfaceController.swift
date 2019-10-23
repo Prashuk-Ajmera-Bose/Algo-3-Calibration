@@ -48,11 +48,6 @@ class InterfaceController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-//        let x = Matrix(x: 1, y: 0, z: 0)
-//        print(x)
-//        print(x.makeRotationMatrixYaw(yaw: .pi/2))
-        
-//        print("User Acc X,User Acc Y,User Acc Z,Grav X,Grav Y,Grav Z,Pitch,Roll,Yaw")
         
         deviceMotionData()
     }
